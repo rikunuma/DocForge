@@ -2,10 +2,12 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# システム依存関係のインストール (軽量化)
+# システム依存関係および日本語フォント (IPAフォント) のインストール
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     libpq5 \
+    fonts-ipafont-gothic \
+    fonts-ipafont-mincho \
     && rm -rf /var/lib/apt/lists/*
 
 # 依存パッケージのコピーとインストール
