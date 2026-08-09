@@ -25,11 +25,18 @@ Phase 3 — テナント・ユーザー・Membership モデル
 
 - タスク:
   - `tenants`, `users`, `tenant_memberships` モデルと CRUD リポジトリ
+  - 招待トークン（`invite_tokens`）とリフレッシュトークン永続化テーブル（`refresh_tokens`）の設計・マイグレーション
+  - トークンハッシュ保存と単回使用、リフレッシュトークンローテーションの仕様を実装
   - ユーザー招待フローの設計（トークン発行）
   - 認証エンドポイント（JWT ベース）の実装試作
   - API 層での `tenant_id` 解決ユーティリティ
+  - Row Level Security (RLS) の導入とアプリ側ミドルウェアでのセッション変数設定の実装
+  - `FORCE ROW LEVEL SECURITY` と `WITH CHECK` ポリシーの検証
 - 受け入れ条件:
+ - 受け入れ条件:
   - ユーザー作成・招待トークン発行・ログインが動作
   - テナント境界が API レベルで守られる単体テスト
+  - RLS が主要テーブルで有効化され、`SET LOCAL` によるセッションスコープが動作する
+  - `WITH CHECK` による INSERT/UPDATE 制約と `FORCE ROW LEVEL SECURITY` の動作確認テスト
 
 見積り: 各 Phase は概ね 1–2 週間（個人開発、学習時間込み）

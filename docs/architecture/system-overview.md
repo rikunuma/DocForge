@@ -47,5 +47,5 @@ docforge/
 - API 層で tenant_id をクライアントから信用しない。認証済みユーザーの membership から決定する
 - 帳票は Jinja2 テンプレートで HTML を生成し、WeasyPrint で PDF に変換する
 
-参照: [docs/architecture/multi-tenant.md](docs/architecture/multi-tenant.md)
-参照: [docs/architecture/auth.md](docs/architecture/auth.md)
+参照: [multi-tenant 設計](./multi-tenant.md)
+参照: [認証設計](./auth.md)
